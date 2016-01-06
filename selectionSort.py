@@ -2,16 +2,26 @@ import random
 import datetime
 
 def selectionSort(list):
+
     j = 0
-    while j < len(list)-1:
+    while j < (len(list)-1)/2:
         min = list[j]
-        index = j
-        for i in range (j, len(list)-1):
+        max = list[len(list)-j-1]
+
+        for i in range (j, len(list)-1-j):
+        
             if list[i+1] < min:
                 min = list[i+1]
-                index = i+1
-        list[j], list[index] = min, list[j]
+                indexMin = i+1
+                
+            if list[i+1] > max:
+                max = list[i+1]
+                indexMax = i+1
+                
+        list[j], list[len(list)-j-1], list[indexMin], list[indexMax] = list[indexMin], list[indexMax], list[j], list[len(list)-j-1]
+
         j += 1
+    
     return list
 
 
