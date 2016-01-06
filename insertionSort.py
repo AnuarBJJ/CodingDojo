@@ -2,8 +2,7 @@ import random
 import datetime
 
 def insertionSort(list):
-    j = 0 
-    for i in range (1, len(list)-1):
+    for i in range (1, len(list)):
         for j in range (i, 0, -1):
             while list[j] < list [j-1]:               
                 list[j], list [j-1] = list [j-1],  list[j]
@@ -14,7 +13,7 @@ def insertionSort(list):
 
 def populate():
     x = []
-    for i in range (0, 7):
+    for i in range (0, 100):
         x.append(round(random.random()*10000))
     return x
     
